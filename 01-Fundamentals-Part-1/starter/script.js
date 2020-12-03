@@ -11,6 +11,18 @@
 // console.log(firstName);
 // console.log(firstName);
 
-const ageJonas = 2037 - 1991;
-const ageSarah = 2037 - 2018;
+const now = 2037;
+const ageJonas = now - 1991;
+const ageSarah = now - 2018;
 console.log(ageJonas, ageSarah);
+
+console.log(ageJonas * 2, ageJonas / 2);
+
+const firstName = 'Jonas';
+const lastName = 'Schmedtmann';
+console.log(firstName + ' ' + lastName);
+// console.log(`${firstName} ${lastName}`);
+
+let x = 10 + 5;
+x += 10;
+console.log(x);
