@@ -57,16 +57,22 @@ console.log(n);
 //  5 Falsy Values: 0, "", undefined, null, NaN
 ///////////////////////////////////
 
-const money = 100;
-if (money) {
-  console.log("Don't spend it all ;)");
-} else {
-  console.log("You should get a job!");
-}
+// const money = 100;
+// if (money) {
+//   console.log("Don't spend it all ;)");
+// } else {
+//   console.log("You should get a job!");
+// }
 
-let height = 0;
-if(height) {
-  console.log('Yay! Height is defined!');
-} else {
-  console.log('Height is UNDEFINED');
-}
+// let height = 0;
+// if(height) {
+//   console.log('Yay! Height is defined!');
+// } else {
+//   console.log('Height is UNDEFINED');
+// }
+
+////////////////////////////////////
+//  Equality Operators: == vs. ===
+///////////////////////////////////
+const age = 19;
+if (age === 18) console.log('You just became an adult :D');
