@@ -17,9 +17,17 @@ TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
 GOOD LUCK 😀
 */
 
-const avgScoreDolphins = (96 + 108 + 89) / 3;
-const avgScoreKoalas = (96 + 108 + 89) / 3;
+const avgScoreDolphins = (97 + 112 + 80) / 3;
+const avgScoreKoalas = (109 + 95 + 50) / 3;
+const dolphinsWon = avgScoreDolphins > avgScoreKoalas
+const koalasWon = avgScoreKoalas > avgScoreDolphins;
 
-if (avgScoreDolphins > avgScoreKoalas) {
-  console.log('')
+if (dolphinsWon && avgScoreDolphins >= 100) {
+  console.log('The Dolphins have won!');
+} else if (koalasWon && avgScoreKoalas >= 100) {
+  console.log('The Koalas have won!');
+} else if (avgScoreDolphins === avgScoreKoalas && avgScoreDolphins + avgScoreKoalas >= 200) {
+  console.log('There is a draw!');
+} else {
+  console.log('No one wins the trophy :(');
 }
