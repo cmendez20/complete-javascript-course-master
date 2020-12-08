@@ -105,3 +105,7 @@ switch(day) {
   default:
     console.log('Not a valid day!');
 }
+
+////////////////////////////////////
+//  The Switch Statement
+///////////////////////////////////
