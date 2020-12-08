@@ -74,46 +74,59 @@ console.log(n);
 ////////////////////////////////////
 //  Equality Operators: == vs. ===
 ///////////////////////////////////
-const age = 19;
-if (age === 18) console.log('You just became an adult :D');
+// const age = 19;
+// if (age === 18) console.log('You just became an adult :D');
 
 ////////////////////////////////////
 //  The Switch Statement
 ///////////////////////////////////
 
-const day = 'friday';
+// const day = 'friday';
 
-switch(day) {
-  case 'monday': // day === 'monday'
-    console.log('Plan course structure');
-    console.log('Go to coding meetup');
-    break;
-  case 'tuesday':
-    console.log('Prepare theory videos');
-    break;
-  case 'wednesday':
-  case 'thursday':
-    console.log('Write code examples');
-    break;
-  case 'friday':
-    console.log('Record videos');
-    break;
-  case 'saturday':
-  case 'sunday':
-    console.log('Enjoy the weekend :D');
-    break;
-  default:
-    console.log('Not a valid day!');
-}
+// switch(day) {
+//   case 'monday': // day === 'monday'
+//     console.log('Plan course structure');
+//     console.log('Go to coding meetup');
+//     break;
+//   case 'tuesday':
+//     console.log('Prepare theory videos');
+//     break;
+//   case 'wednesday':
+//   case 'thursday':
+//     console.log('Write code examples');
+//     break;
+//   case 'friday':
+//     console.log('Record videos');
+//     break;
+//   case 'saturday':
+//   case 'sunday':
+//     console.log('Enjoy the weekend :D');
+//     break;
+//   default:
+//     console.log('Not a valid day!');
+// }
 
 ////////////////////////////////////
 //  Statements and Expressions
 ///////////////////////////////////
 
-if (23 > 10) {
-  const str = '23 is bigger';
-}
+// if (23 > 10) {
+//   const str = '23 is bigger';
+// }
 
-// expressions produce values and statements translate our actions that we want to perform
-const me = 'Chris';
-console.log(`I'm ${2037 - 1998} years old ${me}`);
+// // expressions produce values and statements translate our actions that we want to perform
+// const me = 'Chris';
+// console.log(`I'm ${2037 - 1998} years old ${me}`);
+
+////////////////////////////////////
+//  The Conditional (Ternary Operator)
+///////////////////////////////////
+const age = 23;
+// age >= 18 ? console.log('I like to drink wine :D') : console.log('I like to drink water.');
+
+const drink = age >= 18 ? 'wine' : 'water';
+console.log(drink);
+
+console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`);
+
+console.log(`this is a test template ${3 - 3}`);
