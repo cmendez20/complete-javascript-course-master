@@ -109,3 +109,11 @@ switch(day) {
 ////////////////////////////////////
 //  Statements and Expressions
 ///////////////////////////////////
+
+if (23 > 10) {
+  const str = '23 is bigger';
+}
+
+// expressions produce values and statements translate our actions that we want to perform
+const me = 'Chris';
+console.log(`I'm ${2037 - 1998} years old ${me}`);
