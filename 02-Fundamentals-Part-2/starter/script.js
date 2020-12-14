@@ -84,16 +84,50 @@
 // Functions Calling Other Functions
 //////////////////////////////////////////////////////
 
-function cutFruitPieces(fruit) {
-  return fruit * 4;
+// function cutFruitPieces(fruit) {
+//   return fruit * 4;
+// }
+
+// function fruitProcessor(apples, oranges) {
+//   const applePieces = cutFruitPieces(apples);
+//   const orangePieces = cutFruitPieces(oranges);
+
+//   const juice = `Juice with ${applePieces} piece of apple and ${orangePieces} pieces of orange.`;
+//   return juice;
+// }
+
+// console.log(fruitProcessor(2, 3));
+
+//////////////////////////////////////////////////////
+// Reviewing Functions
+//////////////////////////////////////////////////////
+
+const calcAge = function(birthYear) {
+  return 2020 - birthYear;
 }
 
-function fruitProcessor(apples, oranges) {
-  const applePieces = cutFruitPieces(apples);
-  const orangePieces = cutFruitPieces(oranges);
+const yearsUntilRetirement = function (birthYear, firstName) {
+  const age = calcAge(birthYear);
+  const retirement = 65 - age;
 
-  const juice = `Juice with ${applePieces} piece of apple and ${orangePieces} pieces of orange.`;
-  return juice;
+  if (retirement > 0) {
+    console.log(`${firstName} retires in ${retirement} years`);
+    return retirement;
+  } else {
+    console.log(`${firstName} has already retired`);
+    return -1;
+  }
 }
 
-console.log(fruitProcessor(2, 3));
+console.log(yearsUntilRetirement(1998, 'Chris'));
+console.log(yearsUntilRetirement(1950, 'Chris'));
+
+/*
+    Functions review: 3 different function types
+    Function Declaration: function that can be used before it's declared
+    Function Expression: essentially a function value stored in a variable
+    Arrow Function: great for quick one-line functions, has no this keyword
+
+    Three different ways of writing functions, but they all work in a similar way:
+    receive input data, transform data, and then output data.
+*/
