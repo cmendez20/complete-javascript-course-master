@@ -102,25 +102,25 @@
 // Reviewing Functions
 //////////////////////////////////////////////////////
 
-const calcAge = function(birthYear) {
-  return 2020 - birthYear;
-}
+// const calcAge = function(birthYear) {
+//   return 2020 - birthYear;
+// }
 
-const yearsUntilRetirement = function (birthYear, firstName) {
-  const age = calcAge(birthYear);
-  const retirement = 65 - age;
+// const yearsUntilRetirement = function (birthYear, firstName) {
+//   const age = calcAge(birthYear);
+//   const retirement = 65 - age;
 
-  if (retirement > 0) {
-    console.log(`${firstName} retires in ${retirement} years`);
-    return retirement;
-  } else {
-    console.log(`${firstName} has already retired`);
-    return -1;
-  }
-}
+//   if (retirement > 0) {
+//     console.log(`${firstName} retires in ${retirement} years`);
+//     return retirement;
+//   } else {
+//     console.log(`${firstName} has already retired`);
+//     return -1;
+//   }
+// }
 
-console.log(yearsUntilRetirement(1998, 'Chris'));
-console.log(yearsUntilRetirement(1950, 'Chris'));
+// console.log(yearsUntilRetirement(1998, 'Chris'));
+// console.log(yearsUntilRetirement(1950, 'Chris'));
 
 /*
     Functions review: 3 different function types
@@ -131,3 +131,45 @@ console.log(yearsUntilRetirement(1950, 'Chris'));
     Three different ways of writing functions, but they all work in a similar way:
     receive input data, transform data, and then output data.
 */
+
+//////////////////////////////////////////////////////
+// Introduction to Arrays
+//////////////////////////////////////////////////////
+
+const friend1 = 'Michael';
+const friend2 = 'Steven';
+const friend3 = 'Peter';
+
+const friends = ['Tomas', 'Jutes', 'Oven'];
+console.log(friends);
+
+const y = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = 'Keegan';
+console.log(friends);
+
+const firstName = 'Jonas';
+const jonas = [firstName, 'Schmedtmann', 2037 - 1991, 'teacher', friends];
+console.log(jonas);
+
+// exercise
+const calcAge = function(birthYear) {
+  return 2037 - birthYear;
+}
+
+const years = [1990, 1967, 2002, 2010, 2018];
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+
+console.log(age1, age2, age3);
+
+const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
+console.log(ages);
