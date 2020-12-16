@@ -20,3 +20,20 @@ HINT: To check if number A is at least double number B, check for A >= 2 * B. Ap
 
 GOOD LUCK 😀
 */
+
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+const scoreDolphins = calcAverage(85, 54, 41);
+const scoreKoalas = calcAverage(23, 34, 27);
+
+const checkWinner = function(avgDolphins, avgKoalas) {
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+  } else {
+    console.log(`No team wins...`);
+  }
+}
+
+checkWinner(scoreDolphins, scoreKoalas);
