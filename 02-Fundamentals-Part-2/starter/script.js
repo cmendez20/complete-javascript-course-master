@@ -181,26 +181,26 @@
 // Basic Array Operations (Methods)
 //////////////////////////////////////////////////////
 
-const friends = ['Tomas', 'Jutes', 'Oven'];
+// const friends = ['Tomas', 'Jutes', 'Oven'];
 
-// add elements
-const newLength = friends.push('Jay');
-console.log(friends);
+// // add elements
+// const newLength = friends.push('Jay');
+// console.log(friends);
 
-console.log(newLength);
+// console.log(newLength);
 
-friends.unshift('John'); // returns length of new array, can save into a variable
-console.log(friends);
+// friends.unshift('John'); // returns length of new array, can save into a variable
+// console.log(friends);
 
-// remove elements
-friends.pop(); // removes last element in an array
-const popped = friends.pop(); // returns the removed element
-console.log(popped);
-console.log(friends);
+// // remove elements
+// friends.pop(); // removes last element in an array
+// const popped = friends.pop(); // returns the removed element
+// console.log(popped);
+// console.log(friends);
 
-friends.shift();
-console.log(friends);
+// friends.shift();
+// console.log(friends);
 
-console.log(friends.indexOf('Tomas'));
+// console.log(friends.indexOf('Tomas'));
 
-console.log(friends.includes('Tomas'));
+// console.log(friends.includes('Tomas'));
