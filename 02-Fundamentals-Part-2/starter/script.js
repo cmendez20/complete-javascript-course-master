@@ -136,40 +136,71 @@
 // Introduction to Arrays
 //////////////////////////////////////////////////////
 
-const friend1 = 'Michael';
-const friend2 = 'Steven';
-const friend3 = 'Peter';
+// const friend1 = 'Michael';
+// const friend2 = 'Steven';
+// const friend3 = 'Peter';
+
+// const friends = ['Tomas', 'Jutes', 'Oven'];
+// console.log(friends);
+
+// const y = new Array(1991, 1984, 2008, 2020);
+
+// console.log(friends[0]);
+// console.log(friends[2]);
+
+// console.log(friends.length);
+// console.log(friends[friends.length - 1]);
+
+// friends[2] = 'Keegan';
+// console.log(friends);
+
+// const firstName = 'Jonas';
+// const jonas = [firstName, 'Schmedtmann', 2037 - 1991, 'teacher', friends];
+// console.log(jonas);
+
+// // exercise
+// const calcAge = function(birthYear) {
+//   return 2037 - birthYear;
+// }
+
+// const years = [1990, 1967, 2002, 2010, 2018];
+
+// const age1 = calcAge(years[0]);
+// const age2 = calcAge(years[1]);
+// const age3 = calcAge(years[years.length - 1]);
+
+// console.log(age1, age2, age3);
+
+// const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
+// console.log(ages);
+
+
+
+
+//////////////////////////////////////////////////////
+// Basic Array Operations (Methods)
+//////////////////////////////////////////////////////
 
 const friends = ['Tomas', 'Jutes', 'Oven'];
+
+// add elements
+const newLength = friends.push('Jay');
 console.log(friends);
 
-const y = new Array(1991, 1984, 2008, 2020);
+console.log(newLength);
 
-console.log(friends[0]);
-console.log(friends[2]);
-
-console.log(friends.length);
-console.log(friends[friends.length - 1]);
-
-friends[2] = 'Keegan';
+friends.unshift('John'); // returns length of new array, can save into a variable
 console.log(friends);
 
-const firstName = 'Jonas';
-const jonas = [firstName, 'Schmedtmann', 2037 - 1991, 'teacher', friends];
-console.log(jonas);
+// remove elements
+friends.pop(); // removes last element in an array
+const popped = friends.pop(); // returns the removed element
+console.log(popped);
+console.log(friends);
 
-// exercise
-const calcAge = function(birthYear) {
-  return 2037 - birthYear;
-}
+friends.shift();
+console.log(friends);
 
-const years = [1990, 1967, 2002, 2010, 2018];
+console.log(friends.indexOf('Tomas'));
 
-const age1 = calcAge(years[0]);
-const age2 = calcAge(years[1]);
-const age3 = calcAge(years[years.length - 1]);
-
-console.log(age1, age2, age3);
-
-const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
-console.log(ages);
+console.log(friends.includes('Tomas'));
