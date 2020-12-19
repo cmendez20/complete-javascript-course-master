@@ -276,40 +276,40 @@
 // Object Methods
 //////////////////////////////////////////////////////
 
-const jonas = {
-  firstName: 'Jonas',
-  lastName: 'Schedtmann',
-  birthYear: 1991,
-  job: 'teacher',
-  friends: ['Michael', 'Peter', 'Steven'],
-  hasDriversLicense: true,
-  // need a function expression, a method is a property that is a function value
-  // calcAge: function(birthYear) {
-  //   return 2037 - birthYear;
-  // }
+// const jonas = {
+//   firstName: 'Jonas',
+//   lastName: 'Schedtmann',
+//   birthYear: 1991,
+//   job: 'teacher',
+//   friends: ['Michael', 'Peter', 'Steven'],
+//   hasDriversLicense: true,
+//   // need a function expression, a method is a property that is a function value
+//   // calcAge: function(birthYear) {
+//   //   return 2037 - birthYear;
+//   // }
 
-  // calcAge: function () {
-  //   // console.log(this);
-  //   return 2037 - this.birthYear;
-  // }
+//   // calcAge: function () {
+//   //   // console.log(this);
+//   //   return 2037 - this.birthYear;
+//   // }
 
-  calcAge: function () {
-    this.age = 2037 - this.birthYear;
-    return this.age;
-  },
+//   calcAge: function () {
+//     this.age = 2037 - this.birthYear;
+//     return this.age;
+//   },
 
-  getSummary: function () {
-    const driverStatement = this.hasDriversLicense ? 'a' : 'no';
-    return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${driverStatement} driver's license`;
-  }
-};
+//   getSummary: function () {
+//     const driverStatement = this.hasDriversLicense ? 'a' : 'no';
+//     return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${driverStatement} driver's license`;
+//   }
+// };
 
-console.log(jonas.calcAge());
+// console.log(jonas.calcAge());
 
-console.log(jonas.age);
-console.log(jonas.age);
-console.log(jonas.age);
+// console.log(jonas.age);
+// console.log(jonas.age);
+// console.log(jonas.age);
 
 
-// console.log(jonas['calcAge'](1991));
-console.log(jonas.getSummary());
+// // console.log(jonas['calcAge'](1991));
+// console.log(jonas.getSummary());
