@@ -317,13 +317,47 @@
 
 
 //////////////////////////////////////////////////////
+// for loops
 //////////////////////////////////////////////////////
 
-console.log('Lifting weights repeatition 1');
-console.log('Lifting weights repeatition 2');
-console.log('Lifting weights repeatition 3');
+// console.log('Lifting weights repeatition 1');
+// console.log('Lifting weights repeatition 2');
+// console.log('Lifting weights repeatition 3');
 
-// for loop keeps running while condition is TRUE
-for (let rep = 1; rep <= 10; rep++) {
-  console.log(`Lifting weights repetition ${rep}`);
+// // for loop keeps running while condition is TRUE
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep}`);
+// }
+
+
+//////////////////////////////////////////////////////
+// Looping Arrays, Breaking and Continuing
+//////////////////////////////////////////////////////
+
+const jonasArray = [
+  'Jonas',
+  'Schmedtmann',
+  2037 - 1991,
+  'teacher',
+  ['Michael', 'Peter', 'Steven']
+];
+
+const types = [];
+
+for (let i = 0; i < jonasArray.length; i++) {
+  console.log(jonasArray[i], typeof jonasArray[i]);
+  // types[i] = typeof jonasArray[i];
+  types.push(typeof jonasArray[i]);
 }
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]);
+}
+
+console.log(ages);
+
