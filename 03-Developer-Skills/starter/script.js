@@ -90,9 +90,12 @@ const measureKelvin = function () {
   const measurement = {
     type: 'temp',
     unit: 'celsius',
-    value: prompt('Degress celsius:'),
+
+    // C) FIX THE BUG
+    value: Number(prompt('Degress celsius:')),
   };
 
+  // B) FIND THE BUG
   console.log(measurement);
 
   // console.log(measurement.value);
