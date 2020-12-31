@@ -26,4 +26,13 @@ const testArray = [17, 21, 23];
 
 console.log(printForecast(testArray));
 
-// understand the problem by asking the right questions, and break it into sub-problems
+// The problem solving process
+// 1) Understand the problem by asking the right questions
+// - Array transformed to string, separated by ...
+// - What is the X days? Answer: index + 1
+
+// 2) Breaking up into sub-problems
+// - Transform array into string
+// - Transform each element to string with C
+// - Strings needs to contain day {index + 1}
+// - Add ... between elements and start and end of string
