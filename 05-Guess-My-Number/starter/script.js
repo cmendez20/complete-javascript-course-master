@@ -26,9 +26,17 @@ document.querySelector('.check').addEventListener('click', function () {
 
   if (!guess) {
     // The first sceanario is to assume that there is no input. Then, respond accordingly.
+    // When there is no input
     document.querySelector('.message').textContent = '⛔ No number!';
+
+    // When player wins
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = '🎉 Correct number!';
+    document.querySelector('body').style.backgroundColor = '#60b347';
+    // use style property to manipulate CSS styles with JS, use camelcase for css style, and the value has to be a string.
+    document.querySelector('.number').style.width = '30rem';
+
+    // When guess is too high
   } else if (guess > secretNumber) {
     if (score > 1) {
       document.querySelector('.message').textContent = '📈 Too high!';
@@ -38,6 +46,8 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.message').textContent = '💥 You lost the game.';
       document.querySelector('.score').textContent = 0;
     }
+
+    // When guess is too low
   } else if (guess < secretNumber) {
     if (score > 1) {
       document.querySelector('.message').textContent = '📉 Too low!';
