@@ -25,3 +25,15 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
 // we want to run the function only when the user clicks on the btnClose element.
 btnCloseModal.addEventListener('click', closeModal);  
 overlay.addEventListener('click', closeModal);
+
+// We are basically listening to events everywhere. So, no matter where it happens on the page, we are listening for them. 
+// keyup, only happens when we lift our finger up
+// keypress, when we press the key
+// keydown, when we press down on the key    
+document.addEventListener('keydown', function(e) {
+  // hey JavaScript, call this function when a keydown event occurs. And when you do, please pass the event object as an argument  
+  // console.log(e);
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
