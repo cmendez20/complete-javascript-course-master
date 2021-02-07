@@ -43,44 +43,74 @@ const restaurant = {
   },
 };
 
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via del Sol, 21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
 
-restaurant.orderDelivery({
-  address: '202 Javkson st',
-  starterIndex: 3,
-});
+const newArr = [1, 2, ...arr];
+console.log(newArr);
 
-const { name, openingHours, categories } = restaurant;
-console.log(name, openingHours, categories);
+// Use when you need the elements of an arrary individually
+console.log(...newArr);
 
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-console.log(restaurantName, hours, tags);
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
 
-// Default values
-const { menu = [], starterMenu: starters = [] } = restaurant;
+// Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
 
-// Mutating Variables
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 7, c: 14 };
-({ a, b } = obj);
+// Join 2 arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
 
-console.log(a, b);
+// Iterables: arrays, strings, maps, sets. Not objects
+const str = 'Jonas';
+const letters = [...str, '', 'S.'];
+console.log(letters);
+console.log(...str);
+// this will not work
+// console.log(`${...str} Mendez`);
+// only works when we pass arguments into functions or built a new array
 
-// nested objects
-const {
-  fri: { open, close },
-} = openingHours;
-console.log(open, close);
+// Destructuring Objects
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: 'Via del Sol, 21',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
+
+// restaurant.orderDelivery({
+//   address: '202 Javkson st',
+//   starterIndex: 3,
+// });
+
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
+
+// const {
+//   name: restaurantName,
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
+// console.log(restaurantName, hours, tags);
+
+// // Default values
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+
+// // Mutating Variables
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
+// ({ a, b } = obj);
+
+// console.log(a, b);
+
+// // nested objects
+// const {
+//   fri: { open, close },
+// } = openingHours;
+// console.log(open, close);
 
 //////////////////////////////////////////////
 // DESTRUCTURING ARRAYS
