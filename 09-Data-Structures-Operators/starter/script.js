@@ -41,6 +41,10 @@ const restaurant = {
       `Order recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function(ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`)
+  } 
 };
 
 const arr = [7, 8, 9];
@@ -71,6 +75,20 @@ console.log(...str);
 // this will not work
 // console.log(`${...str} Mendez`);
 // only works when we pass arguments into functions or built a new array
+
+// const ingredients = [prompt('Let\'s make pasta! Ingredient 1?'), prompt('Let\'s make pasta! Ingredient 2?'), prompt('Let\'s make pasta! Ingredient 3?')];
+// console.log(ingredients);
+
+// restaurant.orderPasta(...ingredients);
+
+//  Objects 
+const newRestaurant = {foundedIn: '1991', ...restaurant, founder: 'Guiseppe'};
+console.log(newRestaurant);
+
+const restaurantCopy = {...restaurant};
+restaurantCopy.name = 'Ristorante roma';
+console.log(restaurantCopy);
+console.log(restaurant);
 
 // Destructuring Objects
 // restaurant.orderDelivery({
