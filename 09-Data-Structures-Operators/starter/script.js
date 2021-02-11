@@ -47,48 +47,62 @@ const restaurant = {
   } 
 };
 
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr);
 
-const newArr = [1, 2, ...arr];
-console.log(newArr);
 
-// Use when you need the elements of an arrary individually
-console.log(...newArr);
+// SPREAD because on right side of assignment operator
+const arr = [1, 2, ...[3, 4]];
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
-console.log(newMenu);
+// REST because on the left side of assignment operator (=)
+const [a, b, ...others] = [1, 2, 3, 4, 5];
 
-// Copy array
-const mainMenuCopy = [...restaurant.mainMenu];
+console.log(a, b, others);
 
-// Join 2 arrays
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
+[...restaurant.mainMenu, ...restaurant.starterMenu];
 
-// Iterables: arrays, strings, maps, sets. Not objects
-const str = 'Jonas';
-const letters = [...str, '', 'S.'];
-console.log(letters);
-console.log(...str);
-// this will not work
-// console.log(`${...str} Mendez`);
-// only works when we pass arguments into functions or built a new array
+//////////////////// THE SPREAD OPERATOR (...)
+////// USE TO UNPACK AN ARRAY
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
 
-// const ingredients = [prompt('Let\'s make pasta! Ingredient 1?'), prompt('Let\'s make pasta! Ingredient 2?'), prompt('Let\'s make pasta! Ingredient 3?')];
-// console.log(ingredients);
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
 
-// restaurant.orderPasta(...ingredients);
+// // Use when you need the elements of an arrary individually
+// console.log(...newArr);
 
-//  Objects 
-const newRestaurant = {foundedIn: '1991', ...restaurant, founder: 'Guiseppe'};
-console.log(newRestaurant);
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
 
-const restaurantCopy = {...restaurant};
-restaurantCopy.name = 'Ristorante roma';
-console.log(restaurantCopy);
-console.log(restaurant);
+// // Copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
+
+// // Join 2 arrays
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+
+// // Iterables: arrays, strings, maps, sets. Not objects
+// const str = 'Jonas';
+// const letters = [...str, '', 'S.'];
+// console.log(letters);
+// console.log(...str);
+// // this will not work
+// // console.log(`${...str} Mendez`);
+// // only works when we pass arguments into functions or built a new array
+
+// // const ingredients = [prompt('Let\'s make pasta! Ingredient 1?'), prompt('Let\'s make pasta! Ingredient 2?'), prompt('Let\'s make pasta! Ingredient 3?')];
+// // console.log(ingredients);
+
+// // restaurant.orderPasta(...ingredients);
+
+// //  Objects 
+// const newRestaurant = {foundedIn: '1991', ...restaurant, founder: 'Guiseppe'};
+// console.log(newRestaurant);
+
+// const restaurantCopy = {...restaurant};
+// restaurantCopy.name = 'Ristorante roma';
+// console.log(restaurantCopy);
+// console.log(restaurant);
 
 // Destructuring Objects
 // restaurant.orderDelivery({
