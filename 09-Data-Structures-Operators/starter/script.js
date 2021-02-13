@@ -42,12 +42,12 @@ const restaurant = {
     );
   },
 
-  orderPasta: function(ing1, ing2, ing3) {
-    console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`)
-  } 
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
 };
-
-
 
 // SPREAD because on right side of assignment operator
 const arr = [1, 2, ...[3, 4]];
@@ -95,7 +95,7 @@ console.log(a, b, others);
 
 // // restaurant.orderPasta(...ingredients);
 
-// //  Objects 
+// //  Objects
 // const newRestaurant = {foundedIn: '1991', ...restaurant, founder: 'Guiseppe'};
 // console.log(newRestaurant);
 
