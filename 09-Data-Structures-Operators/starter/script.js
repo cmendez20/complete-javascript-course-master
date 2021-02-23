@@ -63,7 +63,8 @@ const [a, b, ...others] = [1, 2, 3, 4, 5];
 
 console.log(a, b, others);
 
-[...restaurant.mainMenu, ...restaurant.starterMenu];
+const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(pizza, risotto, otherFood);
 
 // 2) functions
 const add = function (...numbers) {
