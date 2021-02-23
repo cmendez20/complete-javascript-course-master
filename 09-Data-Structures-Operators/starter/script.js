@@ -47,17 +47,44 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient, otherIngredients);
+  },
 };
 
-// SPREAD because on right side of assignment operator
+// 1) Destructuring
+
+// SPREAD because on right side of assignment operator (expand data)
 const arr = [1, 2, ...[3, 4]];
 
-// REST because on the left side of assignment operator (=)
+// REST because on the left side of assignment operator (=) (compress data)
 const [a, b, ...others] = [1, 2, 3, 4, 5];
 
 console.log(a, b, others);
 
 [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+// 2) functions
+const add = function (...numbers) {
+  // console.log(numbers);
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(5, 3, 7, 2, 5, 6, 3, 5);
+
+const x = [23, 5, 7];
+
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
 
 //////////////////// THE SPREAD OPERATOR (...)
 ////// USE TO UNPACK AN ARRAY
