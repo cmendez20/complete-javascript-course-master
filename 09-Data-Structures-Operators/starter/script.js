@@ -53,33 +53,44 @@ const restaurant = {
   },
 };
 
-// Logical Operators Properties
-// 1) Use any data type, return any data type, short-circuiting
-console.log(3 || 'Jonas');
-console.log('' || 'Jonas');
-console.log(true || 0);
-console.log(undefined || null);
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
 
-console.log(undefined || 0 || '' || 'hello' || 23 || null);
+// Nullish: null & undefined (NOT include 0 or '')
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
 
-// restaurant.numGuests = 23;
+/////////////////////////
+// Short circuiting (&& and ||)
 
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
+// // Logical Operators Properties
+// // 1) Use any data type, return any data type, short-circuiting
+// console.log(3 || 'Jonas');
+// console.log('' || 'Jonas');
+// console.log(true || 0);
+// console.log(undefined || null);
 
-const guests2 = restaurant.numGuests || 10;
-console.log(guests2);
+// console.log(undefined || 0 || '' || 'hello' || 23 || null);
 
-console.log('------ AND ------');
-console.log(0 && 'Jonas');
-console.log(7 && 'Jonas');
+// // restaurant.numGuests = 23;
 
-// Practical example
-if (restaurant.orderPizza) {
-  restaurant.orderPizza('mushrooms', 'spinach');
-}
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
 
-restaurant.orderPizza && restaurant.orderPizza('mushroomms', 'spinach');
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
+
+// console.log('------ AND ------');
+// console.log(0 && 'Jonas');
+// console.log(7 && 'Jonas');
+
+// // Practical example
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushrooms', 'spinach');
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza('mushroomms', 'spinach');
 
 ////////////////////// Rest patterns and parameters
 
