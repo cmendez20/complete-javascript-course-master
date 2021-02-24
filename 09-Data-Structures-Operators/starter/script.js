@@ -53,39 +53,69 @@ const restaurant = {
   },
 };
 
-// 1) Destructuring
+// Logical Operators Properties
+// 1) Use any data type, return any data type, short-circuiting
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
 
-// SPREAD because on right side of assignment operator (expand data)
-const arr = [1, 2, ...[3, 4]];
+console.log(undefined || 0 || '' || 'hello' || 23 || null);
 
-// REST because on the left side of assignment operator (=) (compress data)
-const [a, b, ...others] = [1, 2, 3, 4, 5];
+// restaurant.numGuests = 23;
 
-console.log(a, b, others);
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
 
-const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(pizza, risotto, otherFood);
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
 
-// 2) functions
-const add = function (...numbers) {
-  // console.log(numbers);
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  console.log(sum);
-};
+console.log('------ AND ------');
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
 
-add(2, 3);
-add(5, 3, 7, 2);
-add(5, 3, 7, 2, 5, 6, 3, 5);
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
 
-const x = [23, 5, 7];
+restaurant.orderPizza && restaurant.orderPizza('mushroomms', 'spinach');
 
-add(...x);
+////////////////////// Rest patterns and parameters
 
-restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
-restaurant.orderPizza('mushrooms');
+// // 1) Destructuring
+
+// // SPREAD because on right side of assignment operator (expand data)
+// const arr = [1, 2, ...[3, 4]];
+
+// // REST because on the left side of assignment operator (=) (compress data)
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+
+// console.log(a, b, others);
+
+// const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(pizza, risotto, otherFood);
+
+// // 2) functions
+// const add = function (...numbers) {
+//   // console.log(numbers);
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   console.log(sum);
+// };
+
+// add(2, 3);
+// add(5, 3, 7, 2);
+// add(5, 3, 7, 2, 5, 6, 3, 5);
+
+// const x = [23, 5, 7];
+
+// add(...x);
+
+// restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+// restaurant.orderPizza('mushrooms');
 
 //////////////////// THE SPREAD OPERATOR (...)
 ////// USE TO UNPACK AN ARRAY
