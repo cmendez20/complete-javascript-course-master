@@ -18,3 +18,76 @@ TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Th
 
 GOOD LUCK 😀
 */
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+// const players1 = game.players[0];
+// const players2 = game.players[1];
+
+// Using destructuring
+const [players1, players2] = game.players;
+
+const [gk, ...fieldPlayers] = players1;
+
+const allPlayers = [...players1, ...players2];
+
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+
+// console.log(gk);
+// console.log(fieldPlayers);
+// console.log(allPlayers);
+// console.log(players1Final);
+
+const { team1, x, team2 } = game.odds;
+
+const printGoals = function (...names) {
+  for (let i = 0; i < names.length; i++) {
+    console.log(names[i]);
+  }
+  console.log(`Total number of goals scored: ${names.length}`);
+};
+
+printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+printGoals(...game.scored);
+
+team1 < team2 && console.log('team 1 is most likely to win!');
+team2 < team1 && console.log('team 2 is most likely to win!');
