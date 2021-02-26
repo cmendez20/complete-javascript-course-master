@@ -53,13 +53,29 @@ const restaurant = {
   },
 };
 
-restaurant.numGuests = 0;
-const guests = restaurant.numGuests || 10;
-console.log(guests);
+////////////////////////////////
+// Looping Arrays using the for-of loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-// Nullish: null & undefined (NOT include 0 or '')
-const guestsCorrect = restaurant.numGuests ?? 10;
-console.log(guestsCorrect);
+// Do not need a code block when you only have one code block here to execute (same for if-else block)
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// console.log([...menu.entries()]);
+
+//////////////////
+// The Nullish Operator
+
+// restaurant.numGuests = 0;
+// const guests = restaurant.numGuests || 10;
+// console.log(guests);
+
+// // Nullish: null & undefined (NOT include 0 or '')
+// const guestsCorrect = restaurant.numGuests ?? 10;
+// console.log(guestsCorrect);
 
 /////////////////////////
 // Short circuiting (&& and ||)
