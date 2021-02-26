@@ -54,15 +54,18 @@ const restaurant = {
 };
 
 ////////////////////////////////
+// Enhanced Object Literals
+
+////////////////////////////////
 // Looping Arrays using the for-of loop
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-// Do not need a code block when you only have one code block here to execute (same for if-else block)
-for (const item of menu) console.log(item);
+// // Do not need a code block when you only have one code block here to execute (same for if-else block)
+// for (const item of menu) console.log(item);
 
-for (const [i, el] of menu.entries()) {
-  console.log(`${i + 1}: ${el}`);
-}
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el}`);
+// }
 
 // console.log([...menu.entries()]);
 
