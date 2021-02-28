@@ -55,37 +55,64 @@ const restaurant = {
   },
 };
 
-// if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+////////////////////////////////
+// Looping Objects
+// Property names
+const properties = Object.keys(openingHours);
+console.log(properties);
 
-// With optional chaining
-// Only if the property before the question mark exist (not null or not undefined), then the proceeding property will be read.
-// If it does not exist, then it returns undefined
-console.log(restaurant.openingHours.mon?.open);
-console.log(restaurant.openingHours?.mon?.open);
+let openStr = `We are open on ${properties.length} days: `;
 
-// REAL Example
-const days = ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun'];
-for (const day of days) {
-  console.log(day);
-  const open = restaurant.openingHours[day]?.open ?? 'closed';
-  console.log(`On ${day}, we open at ${open}`);
+for (const day of properties) {
+  openStr += `${day}, `;
 }
 
-// Methods
-console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
-console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+console.log(openStr);
 
-// Arrays
-// const users = [
-//   {
-//     name: 'Jonas',
-//     email: 'Jonas@email.com',
-//   },
-// ];
+// Property values
+const values = Object.values(openingHours);
+console.log(values);
 
-const users = [];
+// Entire object
+const entries = Object.entries(openingHours);
+// console.log(entries);
 
-console.log(users[0]?.name ?? 'User array empty');
+for (const [key, { open, close }] of entries) {
+  // console.log(x);
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
+// if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+
+// // With optional chaining
+// // Only if the property before the question mark exist (not null or not undefined), then the proceeding property will be read.
+// // If it does not exist, then it returns undefined
+// console.log(restaurant.openingHours.mon?.open);
+// console.log(restaurant.openingHours?.mon?.open);
+
+// // REAL Example
+// const days = ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun'];
+// for (const day of days) {
+//   console.log(day);
+//   const open = restaurant.openingHours[day]?.open ?? 'closed';
+//   console.log(`On ${day}, we open at ${open}`);
+// }
+
+// // Methods
+// console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+// console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+// // Arrays
+// // const users = [
+// //   {
+// //     name: 'Jonas',
+// //     email: 'Jonas@email.com',
+// //   },
+// // ];
+
+// const users = [];
+
+// console.log(users[0]?.name ?? 'User array empty');
 
 ////////////////////////////////
 // Looping Arrays using the for-of loop
