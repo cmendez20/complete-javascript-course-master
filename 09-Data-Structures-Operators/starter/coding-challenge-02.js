@@ -78,3 +78,16 @@ for (const odd of odds) {
 }
 const avg = (sum / odds.length).toFixed(2);
 console.log(avg);
+
+const printOdds = function (
+  { team1, team2 },
+  { team1: score1, team2: score2 }
+) {
+  console.log(`Odd of victory ${team1}: ${score1}`);
+  console.log(`Odd of draw: 3.25`);
+  console.log(`Odd of victory ${team2}: ${score2}`);
+};
+
+console.log(game.odds);
+
+printOdds(game, game.odds);
