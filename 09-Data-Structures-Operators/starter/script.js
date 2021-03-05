@@ -55,32 +55,75 @@ const restaurant = {
   },
 };
 
-////////////////////////////////
-// Looping Objects
-// Property names
-const properties = Object.keys(openingHours);
-console.log(properties);
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
 
-let openStr = `We are open on ${properties.length} days: `;
+console.log(ordersSet);
 
-for (const day of properties) {
-  openStr += `${day}, `;
-}
+console.log(new Set('Jonas'));
 
-console.log(openStr);
+// size is the unique different elements of the set
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
 
-// Property values
-const values = Object.values(openingHours);
-console.log(values);
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
 
-// Entire object
-const entries = Object.entries(openingHours);
-// console.log(entries);
+ordersSet.delete('Risotto');
 
-for (const [key, { open, close }] of entries) {
-  // console.log(x);
-  console.log(`On ${key} we open at ${open} and close at ${close}`);
-}
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+
+console.log(new Set('ChristopherMendez').size);
+
+// Sets are not intended to replace arrays at all.
+// So whenever you need to store values in order and may contain duplicates, use arrays.
+// Also true when you need to manipulate data.
+
+// Sets are very unique and very easy to mess with. However, not really more important to use than arrays, only with unique data.
+
+// ////////////////////////////////
+// // Looping Objects
+// // Property names
+// const properties = Object.keys(openingHours);
+// console.log(properties);
+
+// let openStr = `We are open on ${properties.length} days: `;
+
+// for (const day of properties) {
+//   openStr += `${day}, `;
+// }
+
+// console.log(openStr);
+
+// // Property values
+// const values = Object.values(openingHours);
+// console.log(values);
+
+// // Entire object
+// const entries = Object.entries(openingHours);
+// // console.log(entries);
+
+// for (const [key, { open, close }] of entries) {
+//   // console.log(x);
+//   console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }
 
 // if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 
