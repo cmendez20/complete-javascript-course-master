@@ -55,42 +55,78 @@ const restaurant = {
   },
 };
 
-const ordersSet = new Set([
-  'Pasta',
-  'Pizza',
-  'Pizza',
-  'Risotto',
-  'Pasta',
-  'Pizza',
-]);
+//////////////////////////// MAPS: THE FUNDAMENTALS
+// A map is a data structure that we can use to map data to keys
 
-console.log(ordersSet);
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Florence, Italy');
+rest.set(2, 'Lisbon, Portugal');
 
-console.log(new Set('Jonas'));
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
 
-// size is the unique different elements of the set
-console.log(ordersSet.size);
-console.log(ordersSet.has('Pizza'));
-console.log(ordersSet.has('Bread'));
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
 
-ordersSet.add('Garlic Bread');
-ordersSet.add('Garlic Bread');
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
 
-ordersSet.delete('Risotto');
+console.log(rest.has('categories'));
+rest.delete(2);
 
-console.log(ordersSet);
+const arr = [1, 2];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+console.log(rest.size);
+// rest.clear();
 
-for (const order of ordersSet) console.log(order);
+console.log(rest.get(arr));
 
-// Example
-const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
-console.log(
-  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
-);
+////////////////// SETS
 
-console.log(new Set('ChristopherMendez').size);
+// const ordersSet = new Set([
+//   'Pasta',
+//   'Pizza',
+//   'Pizza',
+//   'Risotto',
+//   'Pasta',
+//   'Pizza',
+// ]);
+
+// console.log(ordersSet);
+
+// console.log(new Set('Jonas'));
+
+// // size is the unique different elements of the set
+// console.log(ordersSet.size);
+// console.log(ordersSet.has('Pizza'));
+// console.log(ordersSet.has('Bread'));
+
+// ordersSet.add('Garlic Bread');
+// ordersSet.add('Garlic Bread');
+
+// ordersSet.delete('Risotto');
+
+// console.log(ordersSet);
+
+// for (const order of ordersSet) console.log(order);
+
+// // Example
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
+// console.log(
+//   new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+// );
+
+// console.log(new Set('ChristopherMendez').size);
 
 // Sets are not intended to replace arrays at all.
 // So whenever you need to store values in order and may contain duplicates, use arrays.
