@@ -55,38 +55,79 @@ const restaurant = {
   },
 };
 
-/////////////////// MAPS: Iteration
-const question = new Map([
-  ['question', 'What is the best programming language in the world?'],
-  [1, 'C'],
-  [2, 'Java'],
-  [3, 'JavaScript'],
-  ['correct', 3],
-  [true, 'Correct Answer!'],
-  [false, 'Wrong answer :('],
-]);
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
 
-console.log(question);
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
 
-// Convert object to map
-console.log(Object.entries(openingHours));
-const hoursMap = new Map(Object.entries(openingHours));
-console.log(hoursMap);
+console.log(airline.length);
 
-// Quiz App
-console.log(question.get('question'));
-for (const [key, value] of question) {
-  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
-}
+// strings also have methods
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal'));
 
-// const answer = Number(prompt('Your answer'));
-const answer = 3;
-console.log(answer);
+// this results in a substring - cant mutate strings, they are primative. Must store in a variable.
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
 
-console.log(question.get(question.get('correct') === answer));
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
 
-// Convert map to array
-console.log(...question);
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You got the middle seat ^-^');
+  } else {
+    console.log('You got lucky xD');
+  }
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('jonas'));
+
+// /////////////////// MAPS: Iteration
+// const question = new Map([
+//   ['question', 'What is the best programming language in the world?'],
+//   [1, 'C'],
+//   [2, 'Java'],
+//   [3, 'JavaScript'],
+//   ['correct', 3],
+//   [true, 'Correct Answer!'],
+//   [false, 'Wrong answer :('],
+// ]);
+
+// console.log(question);
+
+// // Convert object to map
+// console.log(Object.entries(openingHours));
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
+
+// // Quiz App
+// console.log(question.get('question'));
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+// }
+
+// // const answer = Number(prompt('Your answer'));
+// const answer = 3;
+// console.log(answer);
+
+// console.log(question.get(question.get('correct') === answer));
+
+// // Convert map to array
+// console.log(...question);
 
 // //////////////////////////// MAPS: THE FUNDAMENTALS
 // // A map is a data structure that we can use to map data to keys
