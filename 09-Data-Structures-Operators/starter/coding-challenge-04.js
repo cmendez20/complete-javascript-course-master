@@ -37,21 +37,15 @@ const btn = document.querySelector('button');
 
 btn.addEventListener('click', function () {
   const text = document.querySelector('textarea').value;
-  const str = text.toLowerCase().split('_');
-  const camelCased = camelCaseWords(str);
-  console.log(text);
-  console.log(str);
-  console.log(camelCased);
+  const rows = text.split('\n');
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
 });
-
-const camelCaseWords = function (wordArr) {
-  const firstWord = wordArr[0];
-  const secondWord = wordArr[1];
-  const camelArray = [];
-
-  camelArray.push(firstWord);
-  camelArray.push(
-    secondWord.replace(secondWord[0], secondWord[0].toUpperCase())
-  );
-  return camelArray.join('');
-};
