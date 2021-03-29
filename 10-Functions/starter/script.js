@@ -106,6 +106,7 @@ document.body.addEventListener('click', high5);
 //   };
 // };
 
+/* 
 const greet = greeting => name => console.log(`${greeting} ${name}`);
 
 const greeterHey = greet('Hey');
@@ -113,3 +114,31 @@ greeterHey('Jonas');
 greeterHey('Steven');
 
 greet('Hello')('Jonas');
+*/
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  // book: function() {}
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a set on ${this.airline} flight ${this.iataCode} ${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'Christopher Mendez');
+lufthansa.book(635, 'John Smith');
+console.log(lufthansa);
+
+const eurowings = {
+  name: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+book(23, 'Sara Williams');
