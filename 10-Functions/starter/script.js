@@ -134,11 +134,39 @@ lufthansa.book(635, 'John Smith');
 console.log(lufthansa);
 
 const eurowings = {
-  name: 'Eurowings',
+  airline: 'Eurowings',
   iataCode: 'EW',
   bookings: [],
 };
 
 const book = lufthansa.book;
 
-book(23, 'Sara Williams');
+// DOES NOT WORK
+// book(23, 'Sara Williams');
+
+// the call method allows to set the this keyword to the first argument we call, in this case, eurowings
+
+// CALL METHOD
+book.call(eurowings, 23, 'Sarah Williams');
+console.log(eurowings);
+
+book.call(lufthansa, 239, 'Mary Cooper');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 583, 'Mary Cooper');
+console.log(swiss);
+
+// Apply Method
+// Not that used anymore in modern JS
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+// We can simply use the spread operator instead of apply method
+book.call(swiss, ...flightData);
