@@ -71,10 +71,11 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+/*
 /////////////////////////////////////////////////
-
+// Simple Array Methods
 let arr = ['a', 'b', 'c', 'd', 'e'];
 
 ////////// SLICE METHOD
@@ -113,3 +114,28 @@ console.log(letters.join(' - '));
 
 // Other array methods
 // push, shift, unshift, pop, includes, indexOf
+
+*/
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+for (const movement of movements) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+}
+
+console.log(`------ FOR EACH -----`);
+
+movements.forEach(function (movement, index, array) {
+  if (movement > 0) {
+    console.log(`Movement ${index + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${index + 1}: You withdrew ${Math.abs(movement)}`);
+  }
+});
+
+// forEach is a higher order funciton, takes in a callback function
+// first parameter is current el in array, second parameter is current index of array
