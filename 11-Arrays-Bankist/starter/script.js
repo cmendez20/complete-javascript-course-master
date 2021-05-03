@@ -93,7 +93,14 @@ const createUsernames = function (accs) {
 };
 
 createUsernames(accounts);
-console.log(accounts);
+// console.log(accounts);
+
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+
+calcDisplayBalance(account1.movements);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -200,10 +207,11 @@ currenciesUnique.forEach(function (value, _value, map) {
 
 */
 
-console.log('-----------LECTURE---------------');
+//////////////////// MAP METHOD
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+/*
 const eurToUsd = 1.1;
 
 const movementsUSD = movements.map(mov => mov * eurToUsd);
@@ -219,14 +227,41 @@ const movementDescriptions = movements.map(
 );
 
 console.log(movementDescriptions);
+*/
+
+/////////////// FILTER METHOD
 
 // const deposits = movements.filter(function (mov) {
 //   return mov > 0;
 // });
-
+/*
 const deposits = movements.filter(mov => mov > 0);
 
 console.log(deposits);
 
 const withdrawals = movements.filter(mov => mov < 0);
 console.log(withdrawals);
+*/
+
+//////////////// REDUCE METHOD
+console.log(movements);
+
+// accumulator -> SNOWBALL
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+//   return acc + cur;
+// }, 0);
+
+const balance = movements.reduce((acc, cur) => acc + cur, 0);
+
+console.log(balance);
+
+// We always have to think what we want the acc and current value to be
+// Maximum value
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) {
+    return acc;
+  } else {
+    return mov;
+  }
+}, movements[0]);
+console.log(max);
