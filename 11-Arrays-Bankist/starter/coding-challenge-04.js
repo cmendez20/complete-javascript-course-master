@@ -74,4 +74,18 @@ const findDog = function (ownerName) {
 
 console.log(findDog('Sarah'));
 
+const ownersEatTooMuch = dogs
+  .filter(dog => dog.curFood > dog.recommendedFood)
+  .flatMap(dog => dog.owners);
+
+const ownersEatTooLittle = dogs
+  .filter(dog => dog.curFood < dog.recommendedFood)
+  .flatMap(dog => dog.owners);
+
+console.log(ownersEatTooMuch);
+console.log(ownersEatTooLittle);
+
+console.log(`${ownersEatTooMuch.join(' and ')}\'s dogs eat too much!`);
+console.log(`${ownersEatTooLittle.join(' and ')}\'s dogs eat too little!`);
+
 // console.log(dogs);
